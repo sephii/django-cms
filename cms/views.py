@@ -130,7 +130,7 @@ def details(request, slug):
         # There is no page with the requested language
         # and there's no configured fallbacks
         return _handle_no_page(request)
-    elif language_is_unavailable and (redirect_on_fallback or page.is_home):
+    elif language_is_unavailable and redirect_on_fallback:
         # There is no page with the requested language and
         # the user has explicitly requested to redirect on fallbacks,
         # so redirect to the first configured / available fallback language
